@@ -11,7 +11,7 @@ from time import sleep
 from threading import Thread, Event
 
 
-__author__ = freefall
+__author__ = "freefall"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
