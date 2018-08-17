@@ -106,8 +106,8 @@ async def on_message(message):
         l=[]
 
 
-#client.run(os.getenv('TOKEN'))
-client.run("NDc4NjEyMTE1MzYwNDQ4NTEz.DldVkQ._UOfgBuLjqD6_q-pAZaTmoAzmRw")
+client.run(os.getenv('TOKEN'))
+
 
 
 
