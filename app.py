@@ -6,7 +6,7 @@ from time import sleep
 from threading import Thread, Event
 
 
-__author__ = "freefall"
+__author__ = "Freefall"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -62,6 +62,19 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected')
 
-
-if __name__ == '__main__':
+if __name__ == '__main__':    
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+    server = pywsgi.WSGIServer(('', 5000), app, handler_class=WebSocketHandler)
+    server.serve_forever()
     socketio.run(app)
+
+
+
+
+
+
+
+
+
+
