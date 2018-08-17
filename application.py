@@ -1,3 +1,23 @@
+"""
+Demo Flask application to test the operation of Flask with socket.io
+
+Aim is to create a webpage that is constantly updated with random numbers from a background python process.
+
+30th May 2014
+
+===================
+
+Updated 13th April 2018
+
++ Upgraded code to Python 3
++ Used Python3 SocketIO implementation
++ Updated CDN Javascript and CSS sources
+
+"""
+
+
+
+
 # Start with a basic flask app webpage.
 from flask_socketio import SocketIO, emit
 from flask import Flask, render_template, url_for, copy_current_request_context
@@ -6,7 +26,7 @@ from time import sleep
 from threading import Thread, Event
 
 
-__author__ = 'Freefall'
+__author__ = 'slynn'
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -32,28 +52,9 @@ class RandomThread(Thread):
         #infinite loop of magical random numbers
         print("Making random numbers")
         while not thread_stop_event.isSet():
-            
-            with open('stats.txt', 'r') as myfile:
-                data=myfile.read().split('\n')
-                print(data)
-            with open('fastest.txt', 'r', encoding="utf-8") as myfile1:
-                
-                data1=myfile1.read().split('\n')
-                if len(data1)<2:
-                    data1.append("Name 1")
-                    data1.append("Name 2")
-                    data1.append("Name 3")                
-                if len(data1)<2:
-                    data1.append("Name 2")
-                    data1.append("Name 3")
-                if len(data1)<3:
-                    data1.append("Name 3")
-                print(data)          
-            
-            
-            socketio.emit('newnumber', {'a': data[0],'b':data[1],'c':data[2],'l':data1[0],'m':data1[1],'n':data1[2]}, namespace='/test')
-            
-            
+            number = round(random()*10, 3)
+            print(number)
+            socketio.emit('newnumber', {'number': number}, namespace='/test')
             sleep(self.delay)
 
     def run(self):
@@ -84,4 +85,3 @@ def test_disconnect():
 
 if __name__ == '__main__':
     socketio.run(app)
-   
