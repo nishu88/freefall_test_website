@@ -1,19 +1,4 @@
-"""
-Demo Flask application to test the operation of Flask with socket.io
 
-Aim is to create a webpage that is constantly updated with random numbers from a background python process.
-
-30th May 2014
-
-===================
-
-Updated 13th April 2018
-
-+ Upgraded code to Python 3
-+ Used Python3 SocketIO implementation
-+ Updated CDN Javascript and CSS sources
-
-"""
 
 
 
@@ -26,7 +11,7 @@ from time import sleep
 from threading import Thread, Event
 
 
-__author__ = 'slynn'
+__author__ = freefall
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
