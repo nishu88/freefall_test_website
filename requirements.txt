@@ -1,5 +1,6 @@
 discord
 gevent
+geventwebsocket
 click==6.7
 Flask==1.0.2
 Flask-SocketIO==3.0.1
