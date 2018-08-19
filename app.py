@@ -51,8 +51,9 @@ class RandomThread(Thread):
                     if len(data1)<3:
                         data1.append("Name 3")
                     print(data1)
-                except FileNotFoundError:
-                    continue
+                    
+            except FileNotFoundError:
+                continue
             
             sleep(.100)
             socketio.emit('newnumber', {'a': data[0],'b':data[1],'c':data[2],'l':data1[0],'m':data1[1],'n':data1[2]}, namespace='/test')
