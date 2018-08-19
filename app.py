@@ -82,12 +82,8 @@ def test_disconnect():
     print('Client disconnected')
 
 
-<<<<<<< HEAD
-if __name__ == '__main__':  
-     
-=======
+
 if __name__ == '__main__':    
-  
->>>>>>> d38ab310223486e43927b8fdff7032600255650a
+
     socketio.run(app)
    
