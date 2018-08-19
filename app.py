@@ -35,22 +35,22 @@ class RandomThread(Thread):
         print("Making random numbers")
         while not thread_stop_event.isSet():
             try : 
-            with open('stats.txt', 'r') as myfile:
-                data=myfile.read().split('\n')
-                print(data)
-            with open('fastest.txt', 'r', encoding="utf-8") as myfile1:
-                
-                data1=myfile1.read().split('\n')
-                if len(data1)<1:
-                    data1.append("Name 1")
-                    data1.append("Name 2")
-                    data1.append("Name 3")                
-                if len(data1)<2:
-                    data1.append("Name 2")
-                    data1.append("Name 3")
-                if len(data1)<3:
-                    data1.append("Name 3")
-                print(data1)
+                with open('stats.txt', 'r') as myfile:
+                    data=myfile.read().split('\n')
+                    print(data)
+                with open('fastest.txt', 'r', encoding="utf-8") as myfile1:
+                    
+                    data1=myfile1.read().split('\n')
+                    if len(data1)<1:
+                        data1.append("Name 1")
+                        data1.append("Name 2")
+                        data1.append("Name 3")                
+                    if len(data1)<2:
+                        data1.append("Name 2")
+                        data1.append("Name 3")
+                    if len(data1)<3:
+                        data1.append("Name 3")
+                    print(data1)
                 except FileNotFoundError:
                     continue
             
