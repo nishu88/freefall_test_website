@@ -40,7 +40,7 @@ class RandomThread(Thread):
             with open('fastest.txt', 'r', encoding="utf-8") as myfile1:
                 
                 data1=myfile1.read().split('\n')
-                if len(data1)<2:
+                if len(data1)<1:
                     data1.append("Name 1")
                     data1.append("Name 2")
                     data1.append("Name 3")                
