@@ -1,5 +1,4 @@
 discord
-flask
 Flask-Sockets
 gunicorn
 click==6.7
