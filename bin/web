@@ -1,2 +1,2 @@
-python app.py &
+gunicorn app:app &
 python freefall_test_website.py
