@@ -1,4 +1,9 @@
 discord
+<<<<<<< HEAD
+=======
+flask
+Flask-Sockets
+>>>>>>> ae9530b70c6e431d84b0d30af14bc1e05d46f262
 click==6.7
 Flask==1.0.2
 Flask-SocketIO==3.0.1
