@@ -1,8 +1,5 @@
 discord
-<<<<<<< HEAD
 flask
-=======
->>>>>>> d38ab310223486e43927b8fdff7032600255650a
 Flask-Sockets
 click==6.7
 Flask==1.0.2
