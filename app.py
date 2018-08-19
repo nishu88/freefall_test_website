@@ -82,11 +82,7 @@ def test_disconnect():
     print('Client disconnected')
 
 
-if __name__ == '__main__':
-    
-    from gevent import pywsgi
-    from geventwebsocket.handler import WebSocketHandler
-    server = pywsgi.WSGIServer(('', 5000), app, handler_class=WebSocketHandler)
-    server.serve_forever()    
+if __name__ == '__main__':  
+     
     socketio.run(app)
    
