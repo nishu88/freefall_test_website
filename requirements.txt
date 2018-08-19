@@ -1,6 +1,4 @@
 discord
-gevent
-gevent-websocket
 flask
 Flask-Sockets
 gunicorn
