@@ -1,2 +1,2 @@
-gunicorn app:app &
+gunicorn --worker-class socketio.sgunicorn.GeventSocketIOWorker -b 127.0.0.1:5000 app:app -w 1 &
 python freefall_test_website.py
