@@ -4,7 +4,8 @@ from flask import Flask, render_template, url_for, copy_current_request_context
 from random import random
 from time import sleep
 from threading import Thread, Event
-import eventlet
+
+
 
 
 __author__ = 'Freefall'
@@ -14,7 +15,7 @@ app.config['SECRET_KEY'] = 'secret!'
 app.config['DEBUG'] = True
 
 #turn the flask app into a socketio app
-socketio = SocketIO(app,async_mode='eventlet')
+socketio = SocketIO(app)
 
 #random number Generator Thread
 thread = Thread()
@@ -51,7 +52,7 @@ class RandomThread(Thread):
                     data1.append("Name 3")
                 print(data)          
             
-            
+            time.sleep(.300)
             socketio.emit('newnumber', {'a': data[0],'b':data[1],'c':data[2],'l':data1[0],'m':data1[1],'n':data1[2]}, namespace='/test')
             
             
