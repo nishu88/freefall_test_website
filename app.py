@@ -37,6 +37,11 @@ class RandomThread(Thread):
             try : 
                 with open('stats.txt', 'r') as myfile:
                     data=myfile.read().split('\n')
+                    if len(data1)<1:
+                        data1.append("0")
+                        data1.append("0")
+                        data1.append("0")              
+                
                     print(data)
                 with open('fastest.txt', 'r', encoding="utf-8") as myfile1:
                     
