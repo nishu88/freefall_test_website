@@ -1,2 +1,2 @@
-web: gunicorn -k eventlet app:app &
-worker: python freefall_test_website.py
+gunicorn -k eventlet app:app &
+python freefall_test_website.py
