@@ -2,7 +2,7 @@ discord
 click==6.7
 Flask==1.0.2
 Flask-SocketIO==3.0.1
-gunicorn==19.9.0
+gunicorn
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
